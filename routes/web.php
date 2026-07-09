@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::inertia('/', 'intro')->name('intro');
 Route::inertia('/accueil', 'Accueil')->name('home');
-Route::inertia('/about', 'Accueil')->name('about');
-Route::inertia('/programme', 'Accueil')->name('programme');
-Route::inertia('/infos-pratiques', 'Accueil')->name('infos-pratiques');
-Route::inertia('/contact', 'Accueil')->name('contact');
+Route::inertia('/about', 'UnderConstruction', ['title' => 'À propos'])->name('about');
+Route::inertia('/programme', 'UnderConstruction', ['title' => 'Programme'])->name('programme');
+Route::inertia('/infos-pratiques', 'UnderConstruction', ['title' => 'Infos pratiques'])->name('infos-pratiques');
+Route::inertia('/contact', 'UnderConstruction', ['title' => 'Contact'])->name('contact');
 Route::inertia('/inscription', 'Inscription')->name('inscription');
 
 Route::get('/media/jfci-logo', function () {
