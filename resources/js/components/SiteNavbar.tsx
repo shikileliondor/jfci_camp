@@ -2,12 +2,7 @@ import { Link } from '@inertiajs/react';
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import {
-    Sheet,
-    SheetClose,
-    SheetContent,
-    SheetTrigger,
-} from '@/components/ui/sheet';
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { jfciLogo } from '@/routes/media';
 
@@ -62,8 +57,8 @@ function NavLink({
                 className={cn(
                     'rounded-xl border px-4 py-3 text-sm font-medium transition-colors',
                     active
-                        ? 'border-[#0b2545]/15 bg-[#0b2545]/5 text-[#0b2545]'
-                        : 'border-transparent bg-white text-slate-700 hover:border-slate-200 hover:bg-slate-50 hover:text-[#0b2545]',
+                        ? 'border-[#f7bc2a]/30 bg-[#f7bc2a]/12 text-[#123b68]'
+                        : 'border-transparent bg-white text-slate-700 hover:border-[#f7bc2a]/25 hover:bg-[#f7bc2a]/10 hover:text-[#123b68]',
                 )}
             >
                 {item.label}
@@ -78,8 +73,8 @@ function NavLink({
             className={cn(
                 'relative rounded-full px-4 py-2 text-sm font-medium transition-colors',
                 active
-                    ? 'text-[#0b2545] after:absolute after:inset-x-4 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-[#f97316]'
-                    : 'text-slate-600 hover:text-[#0b2545]',
+                    ? 'text-[#123b68] after:absolute after:inset-x-4 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-[#f7bc2a]'
+                    : 'text-slate-600 hover:text-[#123b68]',
             )}
         >
             {item.label}
@@ -105,29 +100,29 @@ export default function SiteNavbar() {
             className={cn(
                 'sticky top-0 z-50 border-b transition-[background-color,box-shadow,backdrop-filter] duration-300',
                 scrolled
-                    ? 'border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-xl'
-                    : 'border-transparent bg-white/75 backdrop-blur-md',
+                    ? 'border-[#f7bc2a]/20 bg-white/90 shadow-sm backdrop-blur-xl'
+                    : 'border-transparent bg-white/80 backdrop-blur-md',
             )}
         >
             <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
                 <Link href={route('home')} className="flex items-center gap-3">
-    <span className="flex size-14 items-center justify-center overflow-hidden rounded-full border border-[#0b2545]/10 bg-white shadow-sm shadow-slate-900/10">
-        <img
-            src={jfciLogo.url()}
-            alt="Logo JFCI"
-            className="h-full w-full rounded-full object-cover"
-        />
-    </span>
+                    <span className="flex size-14 items-center justify-center overflow-hidden rounded-full border border-[#f7bc2a]/25 bg-white shadow-sm shadow-slate-900/10">
+                        <img
+                            src={jfciLogo.url()}
+                            alt="Logo JFCI"
+                            className="h-full w-full rounded-full object-cover"
+                        />
+                    </span>
 
-    <span className="flex flex-col leading-tight">
-        <span className="text-sm font-semibold tracking-[0.18em] text-[#0b2545] uppercase">
-            Convention
-        </span>
-        <span className="text-xs font-medium text-slate-500">
-            JFCI Côte d&apos;Ivoire
-        </span>
-    </span>
-</Link>
+                    <span className="flex flex-col leading-tight">
+                        <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f7bc2a]">
+                            Convention
+                        </span>
+                        <span className="text-xs font-medium text-slate-500">
+                            JFCI Côte d&apos;Ivoire
+                        </span>
+                    </span>
+                </Link>
 
                 <nav className="hidden items-center gap-1 lg:flex">
                     {navItems.map((item) => (
@@ -152,7 +147,7 @@ export default function SiteNavbar() {
                                 variant="ghost"
                                 size="icon"
                                 aria-label="Ouvrir le menu"
-                                className="rounded-full text-slate-700 hover:bg-slate-100 hover:text-[#0b2545]"
+                                className="rounded-full text-[#7a5b00] hover:bg-[#f7bc2a]/10 hover:text-[#8a6500]"
                             >
                                 <Menu className="size-5" />
                             </Button>
@@ -160,16 +155,16 @@ export default function SiteNavbar() {
 
                         <SheetContent
                             side="right"
-                            className="w-[min(22rem,100vw)] border-slate-200 bg-white/95 p-0 backdrop-blur-xl"
+                            className="w-[min(22rem,100vw)] border-[#f7bc2a]/15 bg-white/95 p-0 backdrop-blur-xl"
                         >
                             <div className="flex h-full flex-col">
-                                <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+                                <div className="flex items-center justify-between border-b border-[#f7bc2a]/15 px-5 py-4">
                                     <div className="flex items-center gap-3">
-                                        <span className="flex size-10 items-center justify-center rounded-full bg-[#0b2545] text-base font-semibold text-white">
+                                        <span className="flex size-10 items-center justify-center rounded-full bg-[#f7bc2a] text-base font-semibold text-[#123b68]">
                                             C
                                         </span>
                                         <div className="leading-tight">
-                                            <p className="text-sm font-semibold text-[#0b2545]">
+                                            <p className="text-sm font-semibold text-[#123b68]">
                                                 Convention JFCI
                                             </p>
                                             <p className="text-xs text-slate-500">
@@ -184,7 +179,7 @@ export default function SiteNavbar() {
                                             variant="ghost"
                                             size="icon"
                                             aria-label="Fermer le menu"
-                                            className="rounded-full text-slate-700 hover:bg-slate-100 hover:text-[#0b2545]"
+                                            className="rounded-full text-[#7a5b00] hover:bg-[#f7bc2a]/10 hover:text-[#8a6500]"
                                         >
                                             <X className="size-5" />
                                         </Button>

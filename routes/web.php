@@ -17,6 +17,14 @@ Route::get('/media/jfci-logo', function () {
     return response()->file(storage_path('image_videos/jfci_logo.jpg'));
 })->name('media.jfci-logo');
 
+Route::get('/media/convention', function () {
+    return response()->file(storage_path('image_videos/IMAGE CONVENTION.jpg'));
+})->name('media.convention');
+
+Route::get('/media/banniere', function () {
+    return response()->file(storage_path('image_videos/banniere.png'));
+})->name('media.banniere');
+
 Route::get('/media/gallery/card-1', function () {
     return response()->file(storage_path('image_videos/image 9.jpg'));
 });
