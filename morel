@@ -1,0 +1,43 @@
+Crée une page d’inscription moderne pour le site “Convention JFCI Côte d’Ivoire”.
+
+Objectif :
+La page doit présenter l’inscription de manière claire, jeune, propre et bien divisée. C'est un formulaire complet sur le site 
+
+Style visuel :
+- Design jeune, propre, moderne, chrétien, dynamique.
+- Fond blanc avec touches de bleu, orange et rouge.
+- Cartes arrondies, ombres légères, beaucoup d’espace.
+- Hiérarchie très claire.
+- Ne pas faire une page administrative froide.
+- Design responsive desktop et mobile.
+
+Structure obligatoire de la page :
+
+1. Section Hero en haut
+Titre :
+“Inscription à la Convention JFCI”
+
+Sous-titre :
+“Remplis les informations demandées”
+
+Formulaire 
+Bloc 1 : Identité personnelle
+Champs :
+- Nom
+- Prénoms
+- Email
+- Contact WhatsApp
+- Ou numéro de téléphone simple
+- Situation matrimoniale
+- District
+- Église locale
+- Fonction dans l’église ( chantre, commando, Service d'ordre, intercession si autre  precisez )
+ responsable jeunesse oui ou non
+
+3. Section d’explication courte
+Texte :
+“Ces informations permettent à l’organisation d’identifier les participants, de mieux communiquer avec eux et de préparer la convention dans de bonnes conditions.”
+
+Règles importantes :
+- Le design doit être beau dès le premier regard.
+- Sur mobile, les cartes doivent s’empiler proprement.

@@ -11,11 +11,27 @@ Route::inertia('/about', 'Accueil')->name('about');
 Route::inertia('/programme', 'Accueil')->name('programme');
 Route::inertia('/infos-pratiques', 'Accueil')->name('infos-pratiques');
 Route::inertia('/contact', 'Accueil')->name('contact');
-Route::inertia('/inscription', 'Accueil')->name('inscription');
+Route::inertia('/inscription', 'Inscription')->name('inscription');
 
 Route::get('/media/jfci-logo', function () {
     return response()->file(storage_path('image_videos/jfci_logo.jpg'));
 })->name('media.jfci-logo');
+
+Route::get('/media/gallery/card-1', function () {
+    return response()->file(storage_path('image_videos/image 9.jpg'));
+});
+
+Route::get('/media/gallery/card-2', function () {
+    return response()->file(storage_path('image_videos/image 7.jpg'));
+});
+
+Route::get('/media/gallery/card-3', function () {
+    return response()->file(storage_path('image_videos/image 2 .jpg'));
+});
+
+Route::get('/media/gallery/card-4', function () {
+    return response()->file(storage_path('image_videos/image .jpg'));
+});
 
 Route::prefix('{current_team}')
     ->middleware(['auth', 'verified', EnsureTeamMembership::class])
