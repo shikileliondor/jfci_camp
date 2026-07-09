@@ -1,7 +1,32 @@
 import { Head, Link } from '@inertiajs/react';
-import { Sparkles } from 'lucide-react';
+import { CalendarDays } from 'lucide-react';
+import { motion } from 'motion/react';
 import SiteNavbar from '@/components/SiteNavbar';
 import { jfciLogo } from '@/routes/media';
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 18 },
+    visible: { opacity: 1, y: 0 },
+};
+
+function MotionSection({
+    delay = 0,
+    children,
+}: {
+    delay?: number;
+    children: React.ReactNode;
+}) {
+    return (
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{ duration: 0.55, delay }}
+        >
+            {children}
+        </motion.div>
+    );
+}
 
 export default function Accueil() {
     return (
@@ -11,83 +36,141 @@ export default function Accueil() {
             <div className="min-h-screen bg-[#f6f7fb] text-slate-950">
                 <SiteNavbar />
 
-                <main className="mx-auto w-full max-w-7xl px-4 pb-14 pt-6 sm:px-6 sm:pt-8 lg:px-8 lg:pb-20">
-                    <section className="relative overflow-hidden rounded-[34px] border border-white/70 bg-[linear-gradient(180deg,#f7f8fc_0%,#ffffff_100%)] px-5 py-10 shadow-[0_24px_70px_rgba(15,23,42,0.06)] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_18%,rgba(11,74,162,0.08),transparent_22%),radial-gradient(circle_at_15%_85%,rgba(249,115,22,0.08),transparent_24%)]" />
-                        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#047a5b]/5 to-transparent" />
+                <main className="mx-auto w-full max-w-[1580px] px-4 pb-6 pt-4 sm:px-6 sm:pt-6 lg:px-8 lg:pb-8">
+                    <section className="relative overflow-hidden border border-slate-200/70 bg-[linear-gradient(180deg,#f7f8fc_0%,#ffffff_100%)] shadow-[0_20px_60px_rgba(15,23,42,0.06)]">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_5%,rgba(34,92,163,0.08),transparent_35%)]" />
+                        <div className="absolute inset-x-0 bottom-0 h-[120px] bg-gradient-to-t from-[#dfe2e8]/45 to-transparent" />
 
-                        <div className="relative grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
-                            <div className="max-w-3xl">
-                                <div className="inline-flex items-center gap-2 rounded-full border border-[#047a5b]/15 bg-white/85 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-[#047a5b] shadow-sm">
-                                    <Sparkles className="h-4 w-4" />
-                                    Convention JFCI 2026
-                                </div>
-
-                                <h1 className="mt-6 max-w-2xl text-4xl font-semibold leading-[0.92] tracking-[-0.04em] sm:text-5xl lg:text-[4.9rem]">
-                                    <span className="block text-[#0b4aa2]">Convention Nationale</span>
-                                    <span className="block text-slate-950">2026</span>
-                                    <span className="block text-[#0b4aa2]">de l&apos;Église Foursquare</span>
-                                    <span className="block text-slate-950">Côte d&apos;Ivoire</span>
-                                </h1>
-
-                                <div className="mt-5 h-1.5 w-36 rounded-full bg-slate-200">
-                                    <div className="h-full w-20 rounded-full bg-[#0b4aa2]" />
-                                </div>
-
-                                <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                                    Un temps fort de louange, d&apos;enseignement et de communion pour la jeunesse JFCI.
-                                    Rejoins-nous et prépare ton inscription avec simplicité.
-                                </p>
-
-                                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#f97316]/15 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-[#f97316] shadow-sm">
-                                    Thème 2026
-                                    <span className="h-1.5 w-1.5 rounded-full bg-[#f97316]" />
-                                    La pluie en abondance
-                                </div>
-
-                                <div className="mt-8 flex flex-wrap gap-3">
-                                    <Link
-                                        href={route('inscription')}
-                                        className="inline-flex items-center justify-center rounded-full bg-[#1d4ed8] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(29,78,216,0.24)] transition hover:bg-[#1e40af]"
+                        <div className="relative mx-auto grid min-h-[calc(100svh-88px)] max-w-[1580px] items-center px-5 py-5 sm:px-7 md:px-8 lg:grid-cols-1 lg:px-8 lg:py-8">
+                            <MotionSection delay={0.15}>
+                                <div className="mx-auto flex w-full max-w-[660px] flex-col justify-center py-3 lg:max-w-[1180px] lg:items-center lg:py-0 lg:text-center">
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={fadeUp}
+                                        transition={{ duration: 0.6, delay: 0.14 }}
+                                        className="max-w-[660px] lg:max-w-[1180px]"
                                     >
-                                        S&apos;inscrire
-                                    </Link>
-                                    <Link
-                                        href={route('programme')}
-                                        className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+                                        <div className="flex items-end gap-4 lg:justify-center">
+                                            <h1 className="w-fit text-left text-[clamp(24px,7.2vw,32px)] font-black leading-[1.04] tracking-[-0.038em] text-[#123B68] md:text-[33px] lg:text-center lg:text-[56px] lg:leading-[0.94] xl:text-[68px]">
+                                                <span className="block whitespace-nowrap">Convention Panafricaine</span>
+                                                <span className="mt-1.5 block w-full text-center text-[1.08em] tracking-[-0.025em] text-[#225CA3] lg:hidden">
+                                                    2026
+                                                </span>
+                                            </h1>
+                                            <div className="hidden min-w-[116px] -rotate-2 bg-[#225CA3] px-4 py-3.5 text-center shadow-[0_16px_32px_rgba(34,92,163,0.20)] lg:block">
+                                                <span className="block text-[9px] font-black uppercase tracking-[0.18em] text-white/60">
+                                                    Édition
+                                                </span>
+                                                <span className="mt-1 block text-4xl font-black leading-none tracking-[-0.06em] text-white">
+                                                    2026
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-3 border-l-[3px] border-[#FBB51B] pl-3 lg:mt-5 lg:border-l-0 lg:pl-0">
+                                            <p className="whitespace-nowrap text-[clamp(20px,6.2vw,27px)] font-extrabold leading-none tracking-[-0.035em] text-[#172B3E] lg:text-[31px] xl:text-[37px]">
+                                                Jeunesse Foursquare
+                                            </p>
+                                            <p className="mt-1.5 text-[clamp(20px,6.2vw,27px)] font-black leading-none tracking-[-0.035em] text-[#225CA3] lg:text-[31px] xl:text-[37px]">
+                                                Côte d&apos;Ivoire
+                                            </p>
+                                        </div>
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={fadeUp}
+                                        transition={{ duration: 0.4, delay: 0.17 }}
+                                        className="mt-3 flex items-center gap-1.5 lg:mt-5 lg:justify-center"
                                     >
-                                        Voir le programme
-                                    </Link>
-                                </div>
+                                        <span className="h-[3px] w-14 rounded-full bg-[#225CA3]" />
+                                        <span className="h-[3px] w-7 rounded-full bg-[#FBB51B]" />
+                                    </motion.div>
 
-                                <div className="mt-8 flex flex-wrap gap-3">
-                                    <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
-                                        Louange
-                                    </span>
-                                    <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
-                                        Enseignement
-                                    </span>
-                                    <span className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm">
-                                        Communion
-                                    </span>
-                                </div>
-                            </div>
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={fadeUp}
+                                        transition={{ duration: 0.55, delay: 0.19 }}
+                                        className="mx-auto mt-3.5 inline-flex w-fit flex-col items-start lg:mt-5"
+                                    >
+                                        <span className="relative z-10 ml-5 -mb-1 rounded-sm bg-[#FBB51B] px-3 py-0.5 text-[10px] font-black italic leading-none text-[#123B68] shadow-sm">
+                                            thème
+                                        </span>
+                                        <div className="rounded-sm border border-white bg-[#225CA3] px-4 py-2 shadow-[0_10px_24px_rgba(18,59,104,0.16)] sm:px-5 lg:px-7 lg:py-3">
+                                            <p className="text-[15px] font-black uppercase leading-none tracking-[-0.025em] text-[#FBB51B] sm:text-[18px] lg:text-xl">
+                                                Et j'eus encore un autre reve 
+                                            </p>
+                                            <p className="mt-1 text-center text-[8px] font-semibold italic leading-none text-white/90">
+                                                Genèse 37:9
+                                            </p>
+                                        </div>
+                                    </motion.div>
 
-                            <div className="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
-                                <div className="absolute inset-0 mx-auto h-[20rem] w-[20rem] rounded-full bg-[#0b4aa2]/5 blur-3xl sm:h-[24rem] sm:w-[24rem]" />
+                                    <motion.p
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={fadeUp}
+                                        transition={{ duration: 0.55, delay: 0.22 }}
+                                        className="mt-3.5 max-w-[500px] border-l-[3px] border-[#225CA3]/35 pl-4 text-left text-[13px] font-medium leading-6 text-[#33475B]/85 md:text-[14px] lg:mt-5 lg:max-w-3xl lg:border-l-0 lg:pl-0 lg:text-center lg:text-base lg:leading-7"
+                                    >
+                                        Un temps de louange, de prière, de formation et d&apos;envoi en mission pour impacter notre nation.
+                                    </motion.p>
 
-                                <div className="relative flex w-full items-center justify-center">
-                                    <div className="relative flex size-[18rem] items-center justify-center rounded-full border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.12)] sm:size-[22rem] lg:size-[25rem]">
-                                        <div className="absolute inset-4 rounded-full border border-slate-100" />
-                                        <img
-                                            src={jfciLogo.url()}
-                                            alt="Logo JFCI"
-                                            className="h-[66%] w-[66%] object-contain"
-                                        />
-                                    </div>
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={fadeUp}
+                                        transition={{ duration: 0.55, delay: 0.3 }}
+                                        className="mt-4 flex w-full flex-wrap items-center gap-3 sm:gap-4 lg:mt-6 lg:w-auto lg:justify-center lg:gap-4"
+                                    >
+                                        <Link
+                                            href={route('inscription')}
+                                            className="inline-flex min-h-[50px] w-full items-center justify-center gap-3 rounded-xl bg-[#123B68] px-6 py-3 text-[12px] font-black text-white shadow-[0_14px_30px_rgba(34,92,163,0.24)] transition hover:-translate-y-1 hover:bg-[#225CA3] sm:w-auto lg:min-h-[52px] lg:rounded-full lg:px-8 lg:text-[13px]"
+                                        >
+                                            S&apos;inscrire <span className="text-base text-[#FBB51B]">→</span>
+                                        </Link>
+                                        <Link
+                                            href={route('programme')}
+                                            className="inline-flex min-h-[50px] w-full items-center justify-center gap-3 rounded-xl border border-[#225CA3]/35 bg-white px-6 py-3 text-[12px] font-black text-[#225CA3] shadow-[0_12px_26px_rgba(18,59,104,0.10)] transition hover:-translate-y-1 hover:border-[#225CA3] hover:bg-[#F7FAFD] sm:w-auto lg:min-h-[52px] lg:rounded-full lg:px-8 lg:text-[13px]"
+                                        >
+                                            Programme officiel <span className="text-base text-[#FBB51B]">→</span>
+                                        </Link>
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={fadeUp}
+                                        transition={{ duration: 0.55, delay: 0.4 }}
+                                        className="mt-4 grid w-full grid-cols-[1fr_auto] items-center gap-3 rounded-2xl border border-[#225CA3]/10 bg-white/75 p-3 shadow-[0_12px_32px_rgba(18,59,104,0.08)] backdrop-blur-sm lg:hidden"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#225CA3]/10 text-[#225CA3]">
+                                                <CalendarDays className="h-5 w-5" />
+                                            </span>
+                                            <div>
+                                                <p className="text-[9px] font-black uppercase tracking-[0.15em] text-[#123B68]/45">
+                                                    Rendez-vous
+                                                </p>
+                                                <p className="mt-0.5 text-[13px] font-black text-[#123B68]">
+                                                    12 - 16 août 2026
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span className="rounded-full bg-[#FBB51B]/15 px-3 py-1.5 text-[10px] font-black uppercase text-[#B97800]">
+                                            5 jours
+                                        </span>
+                                    </motion.div>
                                 </div>
-                            </div>
+                            </MotionSection>
+
+                            <div className="hidden lg:block" />
                         </div>
+
+                        <div className="relative h-1.5 bg-gradient-to-r from-[#CD1725] via-[#005AA9] via-[#FFD23F] to-[#5B2C83]" />
                     </section>
                 </main>
             </div>
